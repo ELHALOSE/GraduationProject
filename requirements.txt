@@ -4,7 +4,6 @@ opencv-python
 opencv-python-headless
 NumPy
 Ultralytics
-base64
 requests
 re
 gTTS
