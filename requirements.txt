@@ -1,6 +1,7 @@
 Flask
 Flask-CORS
-OpenCV
+opencv-python
+opencv-python-headless
 NumPy
 Ultralytics
 base64
