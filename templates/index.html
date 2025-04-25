@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deafbot </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-wrapper">
+            <div id="chat" class="chat-container"></div>
+            <div class="input-area">
+                <textarea id="chat-input" placeholder="اكتب رسالتك هنا..."></textarea>
+                <button id="send-button">إرسال</button>
+                <button id="speak-button" style="display: none;">النطق</button>
+            </div>
+        </div>
+        <video id="video" autoplay playsinline></video>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}">
+        
+        function sendImage() {
+            const fileInput = document.getElementById('file-input');
+            const formData = new FormData();
+            formData.append("image", fileInput.files[0]);
+
+            fetch('/detect', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = `الإشارة المكتشفة: ${data.detectedSign}`;
+            })
+            .catch(error => console.log('Error:', error));
+        }
+
+        function speakText() {
+            const chatBox = document.getElementById('chat-box');
+            const text = chatBox.textContent;
+
+            fetch('/speak', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const audio = new Audio(data.audio_url);
+                audio.play();
+            })
+            .catch(error => console.log('Error:', error));
+        }
+    </script>
+</body>
+</html>
