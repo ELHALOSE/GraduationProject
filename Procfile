@@ -1,1 +1,1 @@
-web: gunicorn deploy.Sign-Language-Translator-newclassifier.app2:app
+web: gunicorn app2:app
