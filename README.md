@@ -1,33 +1,64 @@
-# Deafbot: AI-powered Sign Language Recognition and Communication with LLM
+# 🧏‍♂️ Deafbot: AI-powered Sign Language Recognition and Communication with LLM
 
-**Deafbot** is an AI-powered application designed to help bridge the communication gap for individuals with hearing impairments. The system recognizes sign language gestures in real-time, translates them into text, and provides context-aware responses using Artificial Intelligence. Additionally, it converts these text responses into speech, ensuring full accessibility for users.
+**Deafbot** is an AI-powered application designed to bridge the communication gap for individuals with hearing impairments. It recognizes sign language gestures in real-time, translates them into text, and uses Large Language Models to generate intelligent responses — which are then converted into speech for full accessibility.
 
-## Key Features
+---
 
-- **Sign Language Gesture Recognition**: Utilizes the YOLO model and OpenCV to detect sign language gestures in real-time from a video stream.
-- **Intelligent Responses**: Powered by OpenRouter API, the system generates context-aware replies to user inputs.
-- **Speech Output**: Uses Google Text-to-Speech (gTTS) to convert the AI-generated text responses into speech, enabling communication with users who prefer audio responses.
-- **Interactive User Interface**: The interface includes a live video feed for sign detection and a chat window for user interaction.
+## 🚀 Key Features
 
-## Technologies Used
+- 🔤 **Real-Time Sign Language Recognition**  
+  Uses YOLO and OpenCV to detect sign language gestures from live video feed.
 
-- **YOLO (You Only Look Once)**: Real-time object detection for identifying sign language gestures from video input.
-- **OpenCV**: A computer vision library for image processing and video handling.
-- **OpenRouter API**: AI model that generates relevant, context-aware responses based on user input.
-- **gTTS (Google Text-to-Speech)**: Converts text responses into speech.
-- **Flask**: A lightweight Python web framework used for the backend development of the application.
+- 🧠 **Context-Aware AI Responses**  
+  Interacts with users via smart replies generated using the OpenRouter API (GPT/Gemini/...).
 
-## Project Objective
+- 🔊 **Speech Output**  
+  Converts replies into speech using Google Text-to-Speech (gTTS) for audio-based communication.
 
-The main objective of this project is to provide a platform where individuals with hearing impairments can effectively communicate through sign language. The system aims to:
+- 💬 **Interactive Interface**  
+  A simple web interface with live camera feed and chat-style interaction.
 
-1. Detect and recognize sign language gestures.
-2. Translate gestures into text.
-3. Generate context-aware replies using AI.
-4. Provide audio responses to ensure accessibility for all users.
+---
 
-## How to Run the Project
+## 🛠️ Technologies Used
 
-1. **Clone the Repository**:
+- **YOLO** – Real-time object detection.
+- **OpenCV** – Video stream handling & preprocessing.
+- **OpenRouter API** – For intelligent LLM-based response generation.
+- **gTTS** – Google Text-to-Speech engine.
+- **Flask** – Lightweight backend web server.
+- **HTML/CSS/JavaScript** – For frontend UI.
+
+---
+
+## 🎯 Project Objective
+
+The aim of this project is to enable effective two-way communication for deaf or mute individuals using sign language and AI, by:
+
+1. Detecting gestures via webcam.
+2. Translating them to natural language text.
+3. Responding contextually using LLMs.
+4. Generating clear speech responses.
+
+---
+
+## 📂 Project Structure
+
+```bash
+project/
+├── app.py                 # Main Flask app handling backend logic
+├── templates/
+│   └── index.html         # Frontend HTML template
+├── static/
+│   ├── style.css          # Custom styles
+│   ├── script.js          # Frontend interactivity scripts
+│   └── Images/
+│       └── deaf.png       # Interface or illustration image
+```
+
+---
+## Get Clone
+ 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/ELHALOSE/GraduationProject.git
+```
