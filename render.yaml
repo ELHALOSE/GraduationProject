@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: sign-lang-app
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app2:app
-    plan: free
